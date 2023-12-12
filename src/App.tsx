@@ -1,8 +1,7 @@
-// App.tsx
 import { Table } from 'antd';
 import styled from 'styled-components';
 import { useUniversityData } from './Hooks/useUniversityData';
-import {columns} from './constants/constants'
+import {columns} from './Constants/constants'
 
 const ButtonsWrapper = styled.div`
   display: flex;
