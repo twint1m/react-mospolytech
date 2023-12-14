@@ -1,7 +1,9 @@
 import { Table } from 'antd';
 import styled from 'styled-components';
 import { useUniversityData } from './Hooks/useUniversityData';
-import {columns} from './Constants/constants'
+import {columns} from './Constants/constants';
+import { Navbar } from './Components/Navbar';
+import './styles/index.css';
 
 const ButtonsWrapper = styled.div`
   display: flex;
@@ -26,6 +28,7 @@ export const App = () => {
 
   return (
     <>
+      <Navbar/>
       <Table dataSource={dataSource} columns={columns} pagination={false} />
       <ButtonsWrapper>
         <Button onClick={() => setPage(page - 1)} disabled={page === 1 || loading}>
