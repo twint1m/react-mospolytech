@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter ,Routes, NavLink, Route } from 'react-router-dom';
+import { Routes, NavLink, Route } from 'react-router-dom';
 import { About } from "./pages/About";
 import { Contacts } from "./pages/Contacts";
 import { Home } from "./pages/Home";
@@ -34,7 +34,6 @@ export const Navbar = () => {
     }
 
     return (
-        <BrowserRouter>
             <header>
                 <Navigation>
                     <NavLink className={'link'} to={HOME_ROUTE}>Home</NavLink>
@@ -50,7 +49,6 @@ export const Navbar = () => {
                     { isAuth && <Route path="order" element={<Order/>}/> }
                 </Routes>
             </header>
-        </BrowserRouter>
     )
 }
 
