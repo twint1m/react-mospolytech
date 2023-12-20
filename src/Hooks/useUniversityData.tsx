@@ -24,10 +24,10 @@ export const useUniversityData = () => {
     getUniversity(page, LIMIT_LIST_SCHOOL);
   }, [page]);
 
-  return {
+  return ({
     dataSource,
     loading,
     page,
     setPage,
-  };
+  });
 };

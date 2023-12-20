@@ -1,12 +1,15 @@
-import { Table } from 'antd';
-import styled from 'styled-components';
-import { useUniversityData } from './Hooks/useUniversityData';
-import {columns} from './Constants/constants'
+import { Table } from "antd";
+import styled from "styled-components";
+import { useUniversityData } from "./Hooks/useUniversityData";
+import { columns } from "./Constants/constants";
+import { Navbar } from "./Components/Navbar";
+import "./styles/index.css";
+import MainRouter from "./Routes/MainRouter";
 
 const ButtonsWrapper = styled.div`
   display: flex;
   justify-content: center;
-`
+`;
 
 const Button = styled.button`
   margin: 15px;
@@ -26,9 +29,14 @@ export const App = () => {
 
   return (
     <>
+      <Navbar />
+      <MainRouter />
       <Table dataSource={dataSource} columns={columns} pagination={false} />
       <ButtonsWrapper>
-        <Button onClick={() => setPage(page - 1)} disabled={page === 1 || loading}>
+        <Button
+          onClick={() => setPage(page - 1)}
+          disabled={page === 1 || loading}
+        >
           Назад
         </Button>
         <Button onClick={() => setPage(page + 1)} disabled={loading}>
