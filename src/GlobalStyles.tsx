@@ -1,52 +1,59 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
+    :root {
+        --dark: black;
+        --light: white;
+        --transition: all .25s;
+        --buttonColor: lightgrey;
+        --buttonColorDisabled: rgba(211, 211, 211, 0.467); 
+    }
     html, body {
         background-color: var(--theme);
         color: var(--text-color);
     }
     *[data-theme=light] {
-        transition: all .25s;
-		--theme: white;
-        --text-color: black;
+        transition: var(--transition);
+		--theme: var(--light);
+        --text-color: var(--dark);
         a {
-            color: black;
+            color: var(--dark);
         }
         button {
-            background: lightgrey;
-            colowhiter
+            background: var(--buttonColor);
+            color: var(--dark);
             &:disabled {
-                background: rgba(211, 211, 211, 0.467);
+                background: var(--buttonColorDisabled);
             }
         }
         path{
-            fill: black;
+            fill: var(--dark);
         }
         thead, tbody, .ant-table-cell {
-            background-color: white !important;
-            color: black !important;
+            background-color: var(--light) !important;
+            color: var(--dark) !important;
         }
     }
     *[data-theme=dark] {
-        transition: all .25s;
-		--theme: black;
-        --text-color: white;
+        transition: var(--transition);
+		--theme: var(--dark);
+        --text-color: var(--light);
         a {
-            color: white;
+            color: var(--light);
         }
         button {
-            background: rgba(211, 211, 211, 0.467);
-            color: white;
+            background: var(--buttonColorDisabled);
+            color: var(--light);
             &:disabled {
-                background: lightgrey;
+                background: var(--buttonColor);
             }
         }
         path{
-            fill: white;
+            fill: var(--light);
         }
         thead, tbody, .ant-table-cell {
-            background-color: black !important;
-            color: white !important;
+            background-color: var(--dark) !important;
+            color: var(--light) !important;
         }
     }
 `;

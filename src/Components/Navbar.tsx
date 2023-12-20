@@ -9,11 +9,12 @@ import {
 } from "../Routes/configs";
 import { useAuth } from "../Hooks/useAuth";
 import { useCurrentTheme } from "../Hooks/useCurrentTheme";
+import { StyledProp } from "../Interfaces/StyledProp";
 
-const Navigation = styled.nav`
+const Navigation = styled.nav<StyledProp>`
   height: max-content;
   padding: 20px 0;
-  display: flex;
+  display: ${({displayFlex}) => displayFlex ? displayFlex : 'flex'};
   justify-content: space-around;
   font-size: 20px;
   text-align: center;
@@ -37,24 +38,13 @@ const ChangeThemeButton = styled.button`
 `;
 
 export const Navbar = () => {
-  const { isAuth, setIsAuth } = useAuth();
+  const { isAuth, handleLogin } = useAuth();
 
-  const { currentTheme, setCurrentTheme } = useCurrentTheme();
-
-  const changeTheme = () => {
-    const newTheme = currentTheme === "dark" ? "light" : "dark";
-    document.documentElement.setAttribute("data-theme", newTheme);
-    setCurrentTheme(newTheme);
-    console.log(currentTheme);
-  };
-
-  const handleLogin = () => {
-    setIsAuth(!isAuth);
-  };
+  const { changeTheme } = useCurrentTheme();
 
   return (
     <header>
-      <Navigation>
+      <Navigation displayFlex="flex">
         <NavLink className={"link"} to={HOME_ROUTE}>
           Главная
         </NavLink>
