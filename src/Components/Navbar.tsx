@@ -1,9 +1,5 @@
 import React from "react";
-import { Routes, NavLink, Route } from 'react-router-dom';
-import { About } from "./pages/About";
-import { Contacts } from "./pages/Contacts";
-import { Home } from "./pages/Home";
-import { Order } from "./pages/Order";
+import { NavLink } from 'react-router-dom';
 import styled from "styled-components";
 import { ABOUT_ROUTE, CONTACTS_ROUTE, HOME_ROUTE, ORDER_ROUTE } from "../Routes/configs";
 import { useAuth } from "../Hooks/useAuth";
@@ -42,12 +38,6 @@ export const Navbar = () => {
                     { isAuth && <NavLink className={'link'} to={ORDER_ROUTE}>Order</NavLink> }
                     <Button onClick={handleLogin}>{!isAuth ? 'Войти' : 'Выйти'}</Button>
                 </Navigation>
-                <Routes>
-                    <Route path="home" element={<Home/>}/>
-                    <Route path="about" element={<About/>}/>
-                    <Route path="contacts" element={<Contacts/>}/>
-                    { isAuth && <Route path="order" element={<Order/>}/> }
-                </Routes>
             </header>
     )
 }

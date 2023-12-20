@@ -7,26 +7,22 @@ import { Order } from '../Components/pages/Order';
 import { ABOUT_ROUTE, CONTACTS_ROUTE, HOME_ROUTE, ORDER_ROUTE } from './configs';
 import { useAuth } from '../Hooks/useAuth';
 
-const MainRouter: React.FC= () => {
-
+const MainRouter: React.FC = () => {
   const { isAuth } = useAuth();
   
   const basedPath: RouteObject[] = [
-    { path: ABOUT_ROUTE, element: <About />},
+    { path: ABOUT_ROUTE, element: <About /> },
     { path: CONTACTS_ROUTE, element: <Contacts /> },
     { path: HOME_ROUTE, element: <Home/> },
-  ]
+  ];
 
-  const authPath: RouteObject[] = [
-    { path: ORDER_ROUTE , element: <Order />},
-  ]
+  const authPath: RouteObject[] = isAuth
+    ? [{ path: ORDER_ROUTE, element: <Order /> }]
+    : [];
 
-  const resultPaths: RouteObject[] = basedPath
+  const resultPaths: RouteObject[] = basedPath.concat(authPath);
   
-  if(isAuth){
-    resultPaths.push(...authPath)
-  }
   return useRoutes(resultPaths);
-}
+};
 
 export default MainRouter;
