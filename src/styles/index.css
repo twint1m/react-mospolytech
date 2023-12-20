@@ -31,3 +31,10 @@ h1 {
   justify-content: center;
 }
 
+button {
+  background: lightgrey;
+  &:disabled {
+    background: rgba(211, 211, 211, 0.467);
+  }
+}
+
