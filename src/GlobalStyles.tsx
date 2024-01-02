@@ -8,13 +8,15 @@ export const GlobalStyles = createGlobalStyle`
         --buttonColor: lightgrey;
         --buttonColorDisabled: rgba(211, 211, 211, 0.467); 
     }
+
     html, body {
         background-color: var(--theme);
         color: var(--text-color);
     }
+
     *[data-theme=light] {
         transition: var(--transition);
-		--theme: var(--light);
+        --theme: var(--light);
         --text-color: var(--dark);
         a {
             color: var(--dark);
@@ -26,7 +28,7 @@ export const GlobalStyles = createGlobalStyle`
                 background: var(--buttonColorDisabled);
             }
         }
-        path{
+        svg path {
             fill: var(--dark);
         }
         thead, tbody, .ant-table-cell {
@@ -34,9 +36,10 @@ export const GlobalStyles = createGlobalStyle`
             color: var(--dark) !important;
         }
     }
+
     *[data-theme=dark] {
         transition: var(--transition);
-		--theme: var(--dark);
+        --theme: var(--dark);
         --text-color: var(--light);
         a {
             color: var(--light);
@@ -48,7 +51,7 @@ export const GlobalStyles = createGlobalStyle`
                 background: var(--buttonColor);
             }
         }
-        path{
+        svg path {
             fill: var(--light);
         }
         thead, tbody, .ant-table-cell {

@@ -5,9 +5,9 @@ import { Contacts } from '../Components/pages/Contacts';
 import { Home } from '../Components/pages/Home';
 import { Order } from '../Components/pages/Order';
 import { ABOUT_ROUTE, CONTACTS_ROUTE, HOME_ROUTE, ORDER_ROUTE } from './configs';
-import { useAuth } from '../Hooks/useAuth';
+import { useAuth } from '../hooks/useAuth';
 
-const MainRouter: React.FC = () => {
+export const MainRouter: React.FC = () => {
   const { isAuth } = useAuth();
   
   const basedPath: RouteObject[] = [
@@ -24,5 +24,3 @@ const MainRouter: React.FC = () => {
   
   return useRoutes(resultPaths);
 };
-
-export default MainRouter;
