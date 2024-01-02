@@ -1,10 +1,12 @@
 import { Table } from "antd";
 import styled from "styled-components";
-import { useUniversityData } from "./Hooks/useUniversityData";
-import { columns } from "./Constants/constants";
+import { useUniversityData } from "./hooks/useUniversityData";
+import { columns } from "./constants/constants";
 import { Navbar } from "./Components/Navbar";
 import "./styles/index.css";
-import MainRouter from "./Routes/MainRouter";
+import { MainRouter } from "./Routes/MainRouter";
+import { Form } from "./Components/Form";
+
 
 const ButtonsWrapper = styled.div`
   display: flex;
@@ -31,6 +33,7 @@ export const App = () => {
     <>
       <Navbar />
       <MainRouter />
+      <Form />
       <Table dataSource={dataSource} columns={columns} pagination={false} />
       <ButtonsWrapper>
         <Button
