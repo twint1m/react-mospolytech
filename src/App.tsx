@@ -7,6 +7,7 @@ import "./styles/index.css";
 import { MainRouter } from "./Routes/MainRouter";
 import { Form } from "./Components/Form";
 
+
 const ButtonsWrapper = styled.div`
   display: flex;
   justify-content: center;
