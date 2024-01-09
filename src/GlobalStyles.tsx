@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
     :root {
-        --dark: black;
+        --dark: #212121;
         --light: white;
         --transition: all .25s;
         --buttonColor: lightgrey;
@@ -21,7 +21,7 @@ export const GlobalStyles = createGlobalStyle`
         a {
             color: var(--dark);
         }
-        button {
+        button, span {
             background: var(--buttonColor);
             color: var(--dark);
             &:disabled {
@@ -44,7 +44,7 @@ export const GlobalStyles = createGlobalStyle`
         a {
             color: var(--light);
         }
-        button {
+        button, span {
             background: var(--buttonColorDisabled);
             color: var(--light);
             &:disabled {

@@ -2,15 +2,15 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import {
-  ABOUT_ROUTE,
-  CONTACTS_ROUTE,
+  FORM_ROUTE,
+  UNIVERSITY_ROUTE,
   HOME_ROUTE,
   ORDER_ROUTE,
 } from "../Routes/configs";
 import { useAuth } from "../hooks/useAuth";
 import { useCurrentTheme } from "../hooks/useCurrentTheme";
 import { Navigation } from "./Navbar.styled";
-import ChangeThemeIcon from "../assets/icons/ChangeThemeIcon.svg";
+import { ChangeThemeIcon } from "./icons/ChangeThemeIcon";
 
 const Button = styled.button`
   color: --text-color;
@@ -31,39 +31,36 @@ const ChangeThemeButton = styled.button`
   cursor: pointer;
 `;
 
-const ChangeThemeIconImage = styled.img`
-  width: 50%;
-  height: 50%;
-  margin: 0 auto;
-`;
+const NavigationHeader = styled.header``;
 
 export const Navbar: React.FC = () => {
-  const { isAuth, handleLogin } = useAuth();
-
+  const { isAuth, handleLogin, handleLogout } = useAuth();
   const { changeTheme } = useCurrentTheme();
 
   return (
-    <header>
+    <NavigationHeader>
       <Navigation displayFlex="flex">
         <NavLink className={"link"} to={HOME_ROUTE}>
           Главная
         </NavLink>
-        <NavLink className={"link"} to={ABOUT_ROUTE}>
-          О нас
+        <NavLink className={"link"} to={UNIVERSITY_ROUTE}>
+          Универститеты
         </NavLink>
-        <NavLink className={"link"} to={CONTACTS_ROUTE}>
-          Контакты
+        <NavLink className={"link"} to={FORM_ROUTE}>
+          Форма
         </NavLink>
         {isAuth && (
           <NavLink className={"link"} to={ORDER_ROUTE}>
             Заказы
           </NavLink>
         )}
-        <Button onClick={handleLogin}>{!isAuth ? "Войти" : "Выйти"}</Button>
+        <Button onClick={isAuth ? handleLogout : handleLogin}>
+          {!isAuth ? "Войти" : "Выйти"}
+        </Button>
         <ChangeThemeButton onClick={() => changeTheme()}>
-          <ChangeThemeIconImage src={ChangeThemeIcon} />
+          <ChangeThemeIcon />
         </ChangeThemeButton>
       </Navigation>
-    </header>
+    </NavigationHeader>
   );
 };
