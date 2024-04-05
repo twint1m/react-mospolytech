@@ -1,6 +1,6 @@
-import { Navbar } from './Components/pages/Navbar/Navbar'
+import { Navbar } from './components/pages/Navbar'
 import './styles/index.css'
-import { MainRouter } from './Routes/MainRouter'
+import { MainRouter } from './routes/MainRouter'
 
 export const App = () => {
 	return (

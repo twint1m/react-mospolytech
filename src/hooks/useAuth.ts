@@ -1,24 +1,23 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { Context } from '../providers'
 
 export const useAuth = () => {
-  const navigate = useNavigate();
-  const [isAuth, setIsAuth] = useState(false);
+	const navigate = useNavigate()
+	const { isAuth, setIsAuth } = useContext(Context)
 
-  const handleLogin = () => {
-    setIsAuth(!isAuth);
-  };
+	const handleClick = () => {
+		if (isAuth) {
+			setIsAuth(!isAuth)
+			navigate('/')
+		} else {
+			setIsAuth(!isAuth)
+		}
+	}
 
-  const handleLogout = () => {
-    setIsAuth(!isAuth)
-    navigate("/");
-  }
-
-  return {
-    isAuth,
-    setIsAuth,
-    handleLogin,
-    handleLogout
-  };
-};
-
+	return {
+		isAuth,
+		setIsAuth,
+		handleClick
+	}
+}

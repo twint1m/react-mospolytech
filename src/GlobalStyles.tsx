@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyles = createGlobalStyle`
     :root {
@@ -6,7 +6,7 @@ export const GlobalStyles = createGlobalStyle`
         --light: white;
         --transition: all .25s;
         --buttonColor: lightgrey;
-        --buttonColorDisabled: rgba(211, 211, 211, 0.467); 
+        --buttonColorDisabled: rgba(211, 211, 211, 0.467);
     }
 
     html, body {
@@ -18,19 +18,24 @@ export const GlobalStyles = createGlobalStyle`
         transition: var(--transition);
         --theme: var(--light);
         --text-color: var(--dark);
+
         a {
             color: var(--dark);
         }
-        button, span {
+
+        button {
             background: var(--buttonColor);
             color: var(--dark);
+
             &:disabled {
                 background: var(--buttonColorDisabled);
             }
         }
+
         svg path {
             fill: var(--dark);
         }
+
         thead, tbody, .ant-table-cell {
             background-color: var(--light) !important;
             color: var(--dark) !important;
@@ -41,22 +46,27 @@ export const GlobalStyles = createGlobalStyle`
         transition: var(--transition);
         --theme: var(--dark);
         --text-color: var(--light);
+
         a {
             color: var(--light);
         }
-        button, span {
+
+        button {
             background: var(--buttonColorDisabled);
             color: var(--light);
+
             &:disabled {
                 background: var(--buttonColor);
             }
         }
+
         svg path {
             fill: var(--light);
         }
+
         thead, tbody, .ant-table-cell {
             background-color: var(--dark) !important;
             color: var(--light) !important;
         }
     }
-`;
+`
