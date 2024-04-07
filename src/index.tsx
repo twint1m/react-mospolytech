@@ -1,17 +1,23 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import { App } from "./App";
-import { BrowserRouter } from "react-router-dom";
-import { GlobalStyles } from "./GlobalStyles";
+import ReactDOM from 'react-dom/client'
+import { App } from './App'
+import { BrowserRouter } from 'react-router-dom'
+import { GlobalStyles } from './GlobalStyles'
+import { ContextProvider } from './providers'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
-const root = ReactDOM.createRoot(
-  document.getElementById("root") as HTMLElement
-);
+// TODO: вынести queryClient в отдельный файл
+const queryClient = new QueryClient()
+
+const root = ReactDOM.createRoot(document.getElementById('root')!)
 root.render(
-  <>
-    <BrowserRouter>
-      <GlobalStyles />
-      <App />
-    </BrowserRouter>
-  </>
-);
+	<>
+		<QueryClientProvider client={queryClient}>
+			<ContextProvider>
+				<BrowserRouter>
+					<GlobalStyles />
+					<App />
+				</BrowserRouter>
+			</ContextProvider>
+		</QueryClientProvider>
+	</>
+)
