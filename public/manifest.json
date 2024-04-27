@@ -1,6 +1,6 @@
 {
-  "short_name": "",
-  "name": "",
+  "short_name": "React Web App",
+  "name": "React Web Application",
   "icons": [
     {
       "src": "logo.ico",
@@ -8,7 +8,7 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo.png",
+      "src": "logo_192.png",
       "type": "image/png",
       "sizes": "192x192",
       "purpose": "any maskable"
@@ -22,5 +22,5 @@
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#000"
 }

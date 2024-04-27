@@ -5,27 +5,30 @@ import { Button } from '../../ui/Button'
 import { ChangeThemeIcon } from '../../icons/ChangeThemeIcon'
 import { routes } from '../../../routes/routes.data'
 import { useAuth } from '../../../hooks/useAuth'
+import React from 'react'
 
 export const Navbar: React.FC = () => {
 	const { isAuth, handleClick } = useAuth()
 	const { changeTheme } = useCurrentTheme()
+	const renderedLinks = routes.map(route => {
+		if (route.isAuth && !isAuth) {
+			return false
+		}
+		return (
+			!route.isAuth && (
+				<NavLink key={route.path} className={'link'} to={route.path}>
+					{route.name}
+				</NavLink>
+			)
+		)
+	})
 
 	return (
 		<NavigationHeader>
 			<Navigation displayFlex='flex'>
-				{routes.map(route => {
-					if (route.isAuth && !isAuth) {
-						return false
-					}
-					return (
-						!route.isAuth && (
-							<NavLink key={route.path} className={'link'} to={route.path}>
-								{route.name}
-							</NavLink>
-						)
-					)
-				})}
+				{renderedLinks}
 				<Button
+					data-testid={'login-button'}
 					onClick={() => {
 						handleClick()
 					}}

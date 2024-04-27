@@ -3,10 +3,8 @@ import { App } from './App'
 import { BrowserRouter } from 'react-router-dom'
 import { GlobalStyles } from './GlobalStyles'
 import { ContextProvider } from './providers'
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-
-// TODO: вынести queryClient в отдельный файл
-const queryClient = new QueryClient()
+import { QueryClientProvider } from '@tanstack/react-query'
+import queryClient from './queryClient'
 
 const root = ReactDOM.createRoot(document.getElementById('root')!)
 root.render(

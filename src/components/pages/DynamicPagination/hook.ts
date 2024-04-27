@@ -3,7 +3,6 @@ import axios from 'axios'
 import { LIMIT_LIST_SCHOOL } from '../../../constants/schoolLimit'
 import { UniversityData } from './types'
 import { useInView } from 'react-intersection-observer'
-// import { useQuery } from '@tanstack/react-query'
 
 export const useDynamicPagination = () => {
 	const [universitiesData, setUniversitiesData] = useState<UniversityData[]>([])
