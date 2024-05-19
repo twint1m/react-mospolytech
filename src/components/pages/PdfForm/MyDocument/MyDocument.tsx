@@ -16,7 +16,7 @@ const MyDocument: FC<IPdfData> = ({ name, picture }) => {
 					</View>
 
 					<View style={styles.section}>
-						{picture && <Image source={picture} />}
+						{picture && <Image source={picture[0]} />}
 					</View>
 				</Page>
 			</Document>

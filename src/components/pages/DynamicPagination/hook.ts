@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { LIMIT_LIST_SCHOOL } from '../../../constants/schoolLimit'
-import { UniversityData } from './types'
+import { IUniversityData } from './types'
 import { useInView } from 'react-intersection-observer'
 
 export const useDynamicPagination = () => {
-	const [universitiesData, setUniversitiesData] = useState<UniversityData[]>([])
+	const [universitiesData, setUniversitiesData] = useState<IUniversityData[]>(
+		[]
+	)
 	const [currentPage, setCurrentPage] = useState(1)
 	const [loading, setLoading] = useState(false)
 

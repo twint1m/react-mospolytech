@@ -1,10 +1,10 @@
-import { UniversityData } from '../types'
+import { IUniversityData } from '../types'
 
 import { FC } from 'react'
 
 import { Card } from './styles'
 
-export const UniversityTable: FC<{ data: UniversityData }> = ({ data }) => {
+export const UniversityTable: FC<{ data: IUniversityData }> = ({ data }) => {
 	return (
 		<Card>
 			<h1>{data.name}</h1>

@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 // import { useNavigate } from 'react-router-dom'
-import { Context } from '../providers'
+import { Context } from '../context'
 
 export const useAuth = () => {
 	// const navigate = useNavigate()

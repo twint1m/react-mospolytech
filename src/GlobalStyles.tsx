@@ -12,6 +12,9 @@ export const GlobalStyles = createGlobalStyle`
     html, body {
         background-color: var(--theme);
         color: var(--text-color);
+        @media (max-width: 768px) {
+            overflow-x: hidden;
+        }
     }
 
     *[data-theme=light] {

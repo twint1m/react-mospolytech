@@ -42,13 +42,10 @@ const PdfForm = () => {
 					}
 					fileName={`${formData.name}.pdf`}
 				>
-					{({ blob, url, loading, error }) =>
-						loading ? 'Загрузка...' : 'Скачать'
-					}
+					{({ loading }) => (loading ? 'Загрузка...' : 'Скачать')}
 				</PDFDownloadLink>
 			)}
 		</>
 	)
 }
-
 export default PdfForm

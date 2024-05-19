@@ -1,6 +1,6 @@
 import { PaginationWrapper, ObserverBlock, CardWrapper } from './styles'
 import Loader from '../../ui/Loader'
-import { UniversityData } from './types'
+import { IUniversityData } from './types'
 // import { UniversityData } from './types'
 // import { UniversityData } from './types'
 import { useDynamicPagination } from './hook'
@@ -14,7 +14,7 @@ export const DynamicPagination = () => {
 			<PaginationWrapper>
 				<CardWrapper>
 					{universitiesData?.map(
-						(university: UniversityData, index: number) => (
+						(university: IUniversityData, index: number) => (
 							<UniversityTable key={index} data={university} />
 						)
 					)}
