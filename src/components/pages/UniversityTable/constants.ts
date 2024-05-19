@@ -1,4 +1,4 @@
-export const columns = [
+export const UniversityTables = [
 	{
 		title: 'Страна',
 		dataIndex: 'country',

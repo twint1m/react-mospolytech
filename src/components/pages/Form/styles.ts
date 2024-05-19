@@ -7,6 +7,7 @@ export const FormWrapper = styled.form`
 	margin: 5rem auto;
 	flex-direction: column;
 	gap: 10px;
+	max-width: 300px;
 `
 
 export const Input = styled.input`

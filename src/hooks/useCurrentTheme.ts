@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { Context } from '../providers'
+import { Context } from '../context'
 
 export const useCurrentTheme = () => {
 	const { currentTheme, setCurrentTheme } = useContext(Context)

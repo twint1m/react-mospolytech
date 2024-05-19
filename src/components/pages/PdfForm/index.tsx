@@ -11,7 +11,7 @@ const PdfForm = () => {
 		<>
 			<Form onSubmit={handleSubmit(generatePdfFile)}>
 				<input
-					data-testid={'input-update'}
+					data-testid={'input-name'}
 					placeholder={'Введите ваше имя'}
 					alt={'test'}
 					{...register('name', {
@@ -23,6 +23,7 @@ const PdfForm = () => {
 					})}
 				/>
 				<input
+					data-testid={'input-picture'}
 					type='file'
 					accept='image/*'
 					{...register('picture', {
@@ -30,7 +31,9 @@ const PdfForm = () => {
 					})}
 				/>
 				{errors && <div>{errors?.name?.message}</div>}
-				<Button type='submit'>Сохранить</Button>
+				<Button data-testid={'submit-button'} type='submit'>
+					Сохранить
+				</Button>
 			</Form>
 			{formData && (
 				<PDFDownloadLink
@@ -39,13 +42,10 @@ const PdfForm = () => {
 					}
 					fileName={`${formData.name}.pdf`}
 				>
-					{({ blob, url, loading, error }) =>
-						loading ? 'Загрузка...' : 'Скачать'
-					}
+					{({ loading }) => (loading ? 'Загрузка...' : 'Скачать')}
 				</PDFDownloadLink>
 			)}
 		</>
 	)
 }
-
 export default PdfForm

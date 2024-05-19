@@ -1,15 +1,10 @@
-// import reactGif from '../../../assets/images/react.gif'
-import styled from 'styled-components'
-
-const ReactIcon = styled.img`
-	display: flex;
-	margin: 100px auto;
-`
+import reactGif from '../../../assets/images/react.gif'
+import { ReactIcon } from './styles'
 
 const Home = () => (
 	<>
 		<h1>Главная страница</h1>
-		<ReactIcon src={'../'} alt='React Icon' />
+		<ReactIcon src={reactGif} alt={'React Icon'} />
 	</>
 )
 

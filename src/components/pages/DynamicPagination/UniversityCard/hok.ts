@@ -3,22 +3,21 @@ import axios from 'axios'
 import { LIMIT_LIST_SCHOOL } from '../../../../constants/schoolLimit'
 import { useEffect, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
-import { UniversityData } from '../types'
 
 export const usePagination = () => {
 	const [currentPage, setCurrentPage] = useState(1)
 
-	const fetchUniversities = async (): Promise<UniversityData[]> => {
+	const fetchUniversities = async (currentPage: number) => {
 		const offset = (currentPage - 1) * LIMIT_LIST_SCHOOL
-		const response = await axios.get<UniversityData[]>(
+
+		return await axios.get(
 			`http://universities.hipolabs.com/search?offset=${offset}&limit=${LIMIT_LIST_SCHOOL}`
 		)
-		return response.data
 	}
 
-	const { data, isLoading, error } = useQuery<UniversityData[], Error>({
-		queryKey: ['universitiesData'],
-		queryFn: fetchUniversities
+	const { data, isLoading } = useQuery({
+		queryKey: ['universities', currentPage],
+		queryFn: async () => await fetchUniversities(currentPage)
 	})
 
 	const { ref, inView } = useInView({
@@ -31,5 +30,5 @@ export const usePagination = () => {
 		}
 	}, [inView])
 
-	return { data, isLoading, error, ref }
+	return { data, isLoading, ref }
 }

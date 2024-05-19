@@ -10,6 +10,12 @@ export const Navigation = styled.nav<StyledProp>`
 	justify-content: space-around;
 	font-size: 20px;
 	text-align: center;
+	@media (max-width: 768px) {
+		flex-direction: column;
+		margin: 0 auto;
+		align-items: center;
+		gap: 20px;
+	}
 `
 
 export const Button = styled.button`

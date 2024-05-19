@@ -1,12 +1,14 @@
 import styled from 'styled-components'
 
-export const PaginationWrapper = styled.div``
+export const PaginationWrapper = styled.div`
+	margin-bottom: 50px;
+`
 export const ObserverBlock = styled.div`
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
 	height: 50px;
-	background-color: red;
+	background-color: transparent;
 `
 export const CardWrapper = styled.div`
 	display: grid;

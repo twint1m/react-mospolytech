@@ -1,14 +1,21 @@
-import { columns } from './constants'
-import { useUniversityData } from './hook'
 import { Button, ButtonsWrapper, PageNumber } from './styles'
 import { Table } from 'antd'
+import { useFetchData } from '../../../api'
+import { UniversityTables } from './constants'
 
 const UniversityTable = () => {
-	const { dataSource, loading, page, setPage } = useUniversityData()
+	const { dataSource, loading, page, setPage } = useFetchData(
+		'http://universities.hipolabs.com/search?',
+		25
+	)
 
 	return (
 		<>
-			<Table dataSource={dataSource} columns={columns} pagination={false} />
+			<Table
+				dataSource={dataSource}
+				columns={UniversityTables}
+				pagination={false}
+			/>
 			<ButtonsWrapper>
 				<Button
 					onClick={() => {
