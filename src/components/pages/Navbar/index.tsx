@@ -25,7 +25,7 @@ export const Navbar: React.FC = () => {
 
 	return (
 		<NavigationHeader>
-			<Navigation displayFlex='flex'>
+			<Navigation>
 				{renderedLinks}
 				<Button
 					data-testid={'login-button'}

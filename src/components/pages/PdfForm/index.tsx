@@ -15,11 +15,7 @@ const PdfForm = () => {
 					placeholder={'Введите ваше имя'}
 					alt={'test'}
 					{...register('name', {
-						required: 'Поле обязательно для заполнения!',
-						minLength: {
-							value: 5,
-							message: 'Нужно больше символов'
-						}
+						required: 'Поле обязательно для заполнения!'
 					})}
 				/>
 				<input
