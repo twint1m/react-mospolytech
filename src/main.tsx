@@ -10,7 +10,7 @@ root.render(
 	<>
 		<QueryClientContext>
 			<ContextProvider>
-				<BrowserRouter>
+				<BrowserRouter basename={'/react-mospolytech'}>
 					<GlobalStyles />
 					<App />
 				</BrowserRouter>

@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
 import { useAuth } from '../hooks/useAuth'
+// @ts-ignore
 import { routes } from './routes.data'
 import NotFound from '../components/pages/NotFound'
 import React from 'react'
