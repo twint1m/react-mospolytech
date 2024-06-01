@@ -38,12 +38,12 @@ export default defineConfig({
 					{
 						src: 'screenshot-desktop.jpg',
 						type: 'image/jpeg',
-						sizes: '1920x1080'
+						sizes: '3612x2512'
 					},
 					{
 						src: 'screenshot-mobile.jpg',
 						type: 'image/jpeg',
-						sizes: '375x667'
+						sizes: '642x1766'
 					}
 				]
 			}
