@@ -53,7 +53,6 @@ export default defineConfig({
 		css: true,
 		environment: 'jsdom',
 		globals: true,
-		setupFiles: 'src/tests/main.tsx'
-	},
-	base: '/react-mospolytech'
+		setupFiles: 'src/tests/index.tsx'
+	}
 })

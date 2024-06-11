@@ -40,5 +40,12 @@ export const useDynamicPagination = () => {
 		}
 	}, [inView])
 
-	return { universitiesData, loading, ref }
+	return {
+		universitiesData,
+		loading,
+		ref,
+		setCurrentPage,
+		fetchUniversitiesData,
+		currentPage
+	}
 }
