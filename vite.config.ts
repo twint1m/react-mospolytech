@@ -33,6 +33,18 @@ export default defineConfig({
 						type: 'image/png',
 						purpose: 'any maskable'
 					}
+				],
+				screenshots: [
+					{
+						src: 'screenshot-desktop.jpg',
+						type: 'image/jpeg',
+						sizes: '3612x2512'
+					},
+					{
+						src: 'screenshot-mobile.jpg',
+						type: 'image/jpeg',
+						sizes: '642x1766'
+					}
 				]
 			}
 		})
